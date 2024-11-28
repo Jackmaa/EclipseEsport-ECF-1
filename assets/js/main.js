@@ -10,5 +10,5 @@ function openNav() {
 }
 
 function closeNav() {
-    menu.classList.remove("active");
+    menu.classList.remove("active"); 
 }
