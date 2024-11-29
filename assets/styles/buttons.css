@@ -9,6 +9,7 @@
 }
 
 .skew > a {
+    font-family: var(--ff-brand);
     display: block;
     line-height: 3rem;
     font-size:1.5rem;
@@ -44,10 +45,10 @@
     left: 0;
     bottom: 0;
 }
-/* .skew.primary:hover a,
+.skew.primary:hover a,
 .skew.primary:focus a {
     color: var(--primary-clr);
-} */
+}
 
 .skew.secondary::before {
     position: absolute;
