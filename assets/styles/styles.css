@@ -154,7 +154,7 @@ img {
   display: inline-block;
   position: relative;
   font-size: var(--fs-3);
-  color: var(--primary-clr);
+  color: var(--grey);
   z-index: 1;
 }
 
@@ -168,7 +168,7 @@ img {
   width: 9rem;
   transform: skewX(-20deg);
   transform-origin: right;
-  background-color: var(--secondary-clr);
+  background-color: var(--primary-clr);
 }
 .section-title-secondary {
   font-family: var(--ff-brand);
@@ -189,7 +189,7 @@ img {
   width: 9rem;
   transform: skewX(-20deg);
   transform-origin: right;
-  background-color: var(--primary-clr);
+  background-color: var(--secondary-clr);
 }
 
 /* || HEADER || */
@@ -337,17 +337,8 @@ h1 {
   display: grid;
 }
 #news h2 {
-  color: #e5e5e5;
-}
-
-.section-title-secondary {
   place-self: end;
-  position: relative;
   padding-inline: var(--spacer);
-}
-
-.section-title-secondary::before {
-  background-color: var(--primary-clr);
 }
 
 .news-article {
@@ -396,8 +387,19 @@ h1 {
   place-items: center;
 }
 
+#sponsors h2 {
+  color: var(--primary-clr);
+}
+
 #sponsors > img {
   padding: var(--spacer);
+}
+
+/*SCHEDULE SECTION */
+
+#schedule {
+  background: var(--bg-blue);
+  max-width: 100%;
 }
 
 /* || FAQ SECTION ||*/
@@ -451,7 +453,6 @@ details[open] > summary::after {
   transform: rotate(180deg);
 }
 
-
 /* || FOOTER || */
 
 footer {
@@ -461,8 +462,9 @@ footer {
   gap: var(--spacer);
 }
 
-footer h2 {
+#footer {
   place-self: center;
+  color: var(--primary-clr);
 }
 
 .logo {

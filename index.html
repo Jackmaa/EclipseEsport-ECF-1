@@ -10,8 +10,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/buttons.css">
+    <link rel="stylesheet" href="./assets/styles/calendrier.css">
     <title>Eclipse E-sport</title>
 </head>
 
@@ -45,7 +53,7 @@
             </article>
         </section>
         <section id="news" class="section-padding">
-            <h2 class="section-title-secondary">NEWS</h2>
+            <h2 class="section-title-primary">NEWS</h2>
             <article class="news-article ">
                 <img src="assets/img/14b184db38811db48b84d3fd439f8caf501aec41.png" alt="champions-stage-photo">
 
@@ -74,11 +82,49 @@
             <div class="skew primary"><a href="">MORE NEWS</div></a>
         </section>
         <section id="schedule">
-
+            <h2 class="section-title-secondary">SCHEDULE</h2>
+            <div class="container">
+              <div class="left">
+                <div class="calendar">
+                  <div class="month">
+                    <i class="fa fa-angle-left prev"></i>
+                    <div class="date"></div>
+                    <i class="fa fa-angle-right next"></i>
+                  </div>
+                  <div class="weekdays">
+                    <div>SUN</div>
+                    <div>MON</div>
+                    <div>TUE</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div>SAT</div>
+                  </div>
+                  <div class="days">
+                    <!--ADDING DAYS WITH JS-->
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <h2 class="section-title-primary">EVENTS</h2>
+                <div class="today-date">
+                  <div class="event-day">SUN</div>
+                  <div class="event-date">1 DECEMBER</div>
+                </div>
+                <div class="events">
+                  <!-- ADDING EVENTS THROUGH JS-->
+                </div>
+              </div>
+            </div>
         </section>
-
+        <section id="sponsors" class="section-padding section-width">
+            <h2 class="section-title-secondary">SPONSORS</h2>
+            <img src="./assets/img/ASUS_Logo-neu-mobile.png" alt="">
+            <img src="./assets/img/Corsair-mobile.png" alt="">
+            <img src="./assets/img/Intel_logo-mobile.png" alt="">
+        </section>
         <section class="section-padding" id="faq">
-            <h2 class="section-title-primary">FAQ</h2>
+            <h2 class="section-title-secondary">FAQ</h2>
             <p>Any questions?</p>
 
             <details>
@@ -89,18 +135,11 @@
                 </p>
             </details>
         </section>
-
-        <section id="sponsors" class="section-padding section-width">
-            <h2 class="section-title-primary">SPONSORS</h2>
-            <img src="./assets/img/ASUS_Logo-neu-mobile.png" alt="">
-            <img src="./assets/img/Corsair-mobile.png" alt="">
-            <img src="./assets/img/Intel_logo-mobile.png" alt="">
-        </section>
     </main>
 
     <footer>
         <img class="logo" src="./assets/img/Logo2.svg" alt="logo-eclipse-e-sport">
-        <h2 class="section-title-primary">SOCIALS</h2>
+        <h2 id="footer" class="section-title-secondary">SOCIALS</h2>
         <!-- contient mes svg en html -->
         <div class="socials-container">
             <!-- <img src="./assets/img/discord-icon.svg" alt=""> -->
@@ -147,6 +186,7 @@
                 </svg></a>
         </div>
     </footer>
+    <script src="./assets/js/calendrier.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/menuBurger.js"></script>
 </body>
