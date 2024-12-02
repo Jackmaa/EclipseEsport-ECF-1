@@ -37,11 +37,11 @@ const eventsArr = [
     events: [
       {
         title: "Event 1",
-        time: "10:00 AM",
+        time: "10:00 AM - 11:00 AM",
       },
       {
         title: "Event 2",
-        time: "11:00 AM",
+        time: "11:00 AM - 12:00 PM",
       },
     ],
   },

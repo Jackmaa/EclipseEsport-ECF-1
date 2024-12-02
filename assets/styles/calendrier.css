@@ -1,6 +1,10 @@
+#schedule {
+  display: grid;
+}
+
 #schedule h2 {
   color: var(--grey);
-  margin-inline: 8rem;
+  place-self: end;
 }
 
 .container {
@@ -20,7 +24,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
   color: var(--secondary-clr);
   background-color: var(--primary-clr-lighter);
 }
@@ -53,7 +56,7 @@
   place-items: center;
   align-items: center;
   padding-block: var(--spacer-md);
-  font-size: var(--fs-2);
+  font-size: 1.5rem;
 }
 
 .calendar .weekdays div {
@@ -67,23 +70,24 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  padding-block: var(--spacer);
   margin-bottom: var(--spacer);
 }
 
 .calendar .days .day {
-  height: 90px;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: var(--secondary-clr);
   outline: 1px solid var(--secondary-clr);
+  transition: all 0.25s ease-in-out;
 }
 
 .calendar .day:not(.prev-date, .next-date):hover {
   background-color: var(--secondary-clr);
   color: var(--primary-clr);
+  font-size: var(--fs-2);
 }
 
 .calendar .days .prev-date,
@@ -118,10 +122,10 @@
 .calendar .days .event::after {
   content: "";
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 50%;
   width: 75%;
-  height: 6px;
+  height: 5px;
   border-radius: 6px;
   transform: translateX(-50%);
   background-color: var(--secondary-clr);
@@ -133,7 +137,12 @@
 
 /*  || EVENT SECTION  || */
 .right {
-  background: url("./assets/img/bg-yellow.png");
+  background: url("../img/bg-yellow.png");
+  display: grid;
+}
+
+.right h2 {
+  place-self: end;
 }
 
 .right {
@@ -144,15 +153,13 @@
 }
 
 .right .today-date {
-  height: 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   justify-content: center;
-  padding-block: var(--spacer);
-  margin-top: 50px;
-  margin-bottom: 20px;
+  padding-top: var(--spacer);
+  margin-bottom: 2rem;
   text-transform: capitalize;
 }
 
@@ -168,19 +175,20 @@
   display: flex;
   flex-direction: column;
   font-family: var(--ff-text);
-  font-size: var(--fs-2);
+  font-size: 1.25rem;
   font-weight: var(--fw-m);
 }
 
 .events .event {
   position: relative;
-  width: 95%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: var(--spacer) 0;
   text-shadow: 1px 1px var(--grey);
+  font-size: 1.5rem;
 }
 
 .no-event {
@@ -188,4 +196,5 @@
   place-self: center;
   padding-block: var(--spacer);
   text-shadow: 1px 1px var(--grey);
+  font-size: var(--fs-2);
 }

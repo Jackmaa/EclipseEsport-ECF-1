@@ -1,0 +1,27 @@
+/*  ||  RANKINGS  ||  */
+#rankings {
+  background: var(--bg-gray);
+}
+
+.rank-container {
+  font-family: var(--ff-text);
+  width: 100%;
+  min-height: 4rem;
+  background-color: var(--grey-light);
+  display: grid;
+  grid-template-columns: 1rem 3rem 1rem 1fr auto 1rem; /*Les colonnes de 1 rem servent de padding sur la grid*/
+  align-items: center;
+  gap: 0.5rem;
+  margin-block-end: var(--spacer);
+}
+
+.rank-container > img {
+  width: 100%;
+  place-self: start;
+  align-self: center;
+  grid-column: 2;
+}
+
+.text-center {
+  text-align: center;
+}
