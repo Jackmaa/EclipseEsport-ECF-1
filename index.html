@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <header>
+    <header id="menu-mobile">
       <nav id="menu" class="menu">
         <a href="#" id="closeBtn" class="close">X</a>
         <ul>
@@ -42,24 +42,26 @@
       <img src="./assets/img/logo1.svg" alt="logo-eclipse-e-sport" />
     </header>
     <main>
-      <section id="hero">
-        <img
-          src="./assets/img/logo1.svg"
-          alt="logo-eclipse-e-sport"
-          class="mobile-hidden"
-        />
-        <article>
-          <h1>WELCOME TO ECLIPSE E-SPORT</h1>
-          <p>
-            HOME OF THE MAJOR LEAGUE FOR COUNTER-STRIKE2. WATCH THE BEST TEAMS
-            IN THE WORLD BATTLE FOR THE WORLD TITLE.
-          </p>
-          <a href="#">WATCH NOW</a>
-        </article>
-      </section>
+      <div class="blue-wrapper">
+        <section id="hero">
+          <img
+            src="./assets/img/logo1.svg"
+            alt="logo-eclipse-e-sport"
+            class="mobile-hidden"
+          />
+          <article>
+            <h1>WELCOME TO ECLIPSE E-SPORT</h1>
+            <p>
+              HOME OF THE MAJOR LEAGUE FOR COUNTER-STRIKE2. WATCH THE BEST TEAMS
+              IN THE WORLD BATTLE FOR THE WORLD TITLE.
+            </p>
+            <a href="#">WATCH NOW</a>
+          </article>
+        </section>
+      </div>
       <section id="news" class="section-padding">
         <h2 class="section-title-primary">NEWS</h2>
-        <article class="news-article">
+        <article class="news-article" id="main-news">
           <img
             src="assets/img/14b184db38811db48b84d3fd439f8caf501aec41.png"
             alt="champions-stage-photo"
@@ -77,8 +79,16 @@
             champions of 2024, or simply watch us live. Be sure to follow us to
             be notified when the tournament goes live. #EclipseE-SportFinals2024
           </p>
+          <div class="flex-it button-row">
+            <div class="skew secondary mobile-hidden">
+              <a href="">BUY TICKETS</a>
+            </div>
+            <div class="skew secondary mobile-hidden">
+              <a href="">FOLLOW US</a>
+            </div>
+          </div>
         </article>
-        <article class="news-article">
+        <article class="news-article grid-span3" id="side-article1">
           <img src="assets/img/image-asset.png" alt="champions-stage-photo" />
           <div class="flex-it">
             <a href="#"
@@ -86,7 +96,7 @@
             </a>
           </div>
         </article>
-        <article class="news-article">
+        <article class="news-article grid-span3" id="side-article2">
           <img src="assets/img/vr-gaming.jpg " alt="champions-stage-photo" />
           <div class="flex-it">
             <a href="#"
