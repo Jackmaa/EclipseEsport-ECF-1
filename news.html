@@ -18,10 +18,11 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./assets/styles/styles.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/buttons.css" />
+    <title>News</title>
   </head>
   <body>
-    <header>
+    <header id="menu-mobile">
       <nav id="menu" class="menu">
         <a href="#" id="closeBtn" class="close">X</a>
         <ul>
@@ -38,7 +39,25 @@
       </span>
       <img src="./assets/img/logo1.svg" alt="logo-eclipse-e-sport" />
     </header>
-    <main>
+    <main id="main-newspage">
+      <header id="menu-desktop" class="mobile-hidden">
+        <nav>
+          <ul>
+            <li>
+              <a href="./index.html"
+                ><img src="./assets/img/logo-text.svg" alt=""
+              /></a>
+            </li>
+            <li><a href="./index.html#news">NEWS</a></li>
+            <li><a href="./rankings.html">RANKINGS</a></li>
+            <li><a href="./index.html">SCHEDULE</a></li>
+            <li><a href="./index.html">FAQ</a></li>
+            <div class="skew secondary">
+              <li><a href="">WATCH NOW</a></li>
+            </div>
+          </ul>
+        </nav>
+      </header>
       <section id="newspage" class="grid-center">
         <h2 class="section-title-primary">NEWS</h2>
         <article class="news-article">
@@ -47,8 +66,8 @@
             alt="champions-stage-photo"
           />
 
-          <div class="flex-it">
-            <a href="#"
+          <div class="link-title">
+            <a href="article.html"
               ><h3>
                 The finals are scheduled and taking place in Paris, FRANCE.
               </h3>
@@ -59,11 +78,19 @@
             champions of 2024, or simply watch us live. Be sure to follow us to
             be notified when the tournament goes live. #EclipseE-SportFinals2024
           </p>
+
+          <div class="flex-it button-row">
+            <div class="skew secondary mobile-hidden">
+              <a href="">BUY TICKETS</a>
+            </div>
+            <div class="skew secondary mobile-hidden">
+              <a href="">FOLLOW US</a>
+            </div>
         </article>
         <article class="news-article">
           <img src="assets/img/image-asset.png" alt="futuristic-3d-art" />
 
-          <div class="flex-it">
+          <div class="link-title">
             <a href="#"
               ><h3>Our best tips and tricks team based online gaming.</h3>
             </a>
@@ -78,7 +105,7 @@
         <article class="news-article">
           <img src="assets/img/vr-gaming.jpg" alt="person-wearing-vr-goggles" />
 
-          <div class="flex-it">
+          <div class="link-title">
             <a href="#"
               ><h3>
                 VR games, is there a possibility for competitive VR gaming ?

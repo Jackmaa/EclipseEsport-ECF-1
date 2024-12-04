@@ -1,11 +1,26 @@
 /*  ||  RANKINGS  ||  */
-#rankings {
+main {
   background: var(--bg-gray);
+  background-color: var(--grey);
+}
+
+main #menu-desktop::before {
+  background: transparent;
+  outline: 1px solid var(--primary-clr-lighter);
+}
+
+#rankings {
+  padding-block: var(--spacer-lg);
+}
+
+#rankings h2 {
+  margin: 0 auto;
 }
 
 .rank-container {
   font-family: var(--ff-text);
-  width: 100%;
+  width: 95%;
+  max-width: 1000px;
   min-height: 4rem;
   background-color: var(--grey-light);
   display: grid;
@@ -13,6 +28,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-block-end: var(--spacer);
+  outline: 1px solid var(--primary-clr-lighter);
 }
 
 .rank-container > img {
@@ -24,4 +40,15 @@
 
 .text-center {
   text-align: center;
+}
+
+@media (min-width: 800px) {
+  .rank-container {
+    font-size: var(--fs-2);
+    grid-template-columns: 1rem 5rem 1rem 1fr auto 1rem;
+  }
+
+  #rankings h2 {
+    margin: var(--spacer-lg);
+  }
 }

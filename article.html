@@ -19,10 +19,10 @@
     />
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <link rel="stylesheet" href="./assets/styles/buttons.css" />
-    <title>Document</title>
+    <title>Latest News</title>
   </head>
   <body>
-    <header>
+    <header id="menu-mobile">
       <nav id="menu" class="menu">
         <a href="#" id="closeBtn" class="close">X</a>
         <ul>
@@ -39,11 +39,29 @@
       </span>
       <img src="./assets/img/logo1.svg" alt="logo-eclipse-e-sport" />
     </header>
-    <main>
+    <main id="article-main">
+      <header id="menu-desktop" class="mobile-hidden">
+        <nav>
+          <ul>
+            <li>
+              <a href="./index.html"
+                ><img src="./assets/img/logo-text.svg" alt=""
+              /></a>
+            </li>
+            <li><a href="./index.html#news">NEWS</a></li>
+            <li><a href="./rankings.html">RANKINGS</a></li>
+            <li><a href="./index.html">SCHEDULE</a></li>
+            <li><a href="./index.html">FAQ</a></li>
+            <div class="skew secondary">
+              <li><a href="">WATCH NOW</a></li>
+            </div>
+          </ul>
+        </nav>
+      </header>
       <section id="article-page" class="grid-center">
         <h2 class="section-title-primary">NEWS</h2>
         <article class="news-article">
-          <div class="flex-it">
+          <div class="link-title">
             <a href="#"
               ><h3>
                 The finals are scheduled and taking place in Paris, FRANCE.
@@ -101,8 +119,13 @@
             consectetur ipsam ducimus inventore eos a laboriosam aperiam
             suscipit est, porro, natus dolor!
           </p>
-          <div class="skew secondary"><a href="">Buy tickets</a></div>
-          <div class="skew secondary"><a href="">follow us</a></div>
+          <div class="flex-it button-row">
+            <div class="skew secondary">
+              <a href="">BUY TICKETS</a>
+            </div>
+            <div class="skew secondary">
+              <a href="">FOLLOW US</a>
+            </div>
         </article>
       </section>
     </main>

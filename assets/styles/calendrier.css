@@ -237,3 +237,17 @@
     padding-right: var(--spacer);
   }
 }
+
+@media (min-width: 1200px) {
+  #schedule {
+    padding: var(--spacer-lg);
+  }
+  .calendar .days .day {
+    font-size: var(--fs-2);
+    height: 7rem;
+  }
+  .calendar .days .today,
+  .calendar .days .active {
+    font-size: var(--fs-4);
+  }
+}
