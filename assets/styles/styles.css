@@ -134,7 +134,6 @@ img {
   --bg-blue: url(../img/bg-blue.webp) top/cover no-repeat;
   --bg-yellow: url(../img/bg-yellow.webp) top/cover no-repeat;
   --bg-gray: url(../img/bg-grey.webp) top/cover no-repeat;
-  --bg-gray2: url(../img/bg-grey.webp) top/cover no-repeat;
 }
 
 /* || UTILITY CLASSES || */
@@ -144,6 +143,73 @@ img {
 .flex-it {
   display: flex;
   justify-content: space-between;
+}
+
+/*SKEWED BUTTON*/
+.skew {
+  position: relative;
+  transform: skewX(-20deg);
+  height: auto;
+  width: 8rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.skew a {
+  font-family: var(--ff-brand);
+  display: block;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #e5e5e5;
+  transform: skewX(20deg);
+}
+
+.primary {
+  border: 2px var(--primary-clr) solid;
+  background-color: var(--primary-clr);
+}
+
+.secondary {
+  background-color: var(--secondary-clr);
+}
+
+.skew.primary::before {
+  position: absolute;
+  content: "";
+  width: 8rem;
+  height: 4rem;
+  bottom: 20px;
+  left: -150px;
+  background-color: var(--secondary-clr);
+  transition: all 0.25s ease;
+}
+
+.skew.primary:hover::before,
+.skew.primary:focus::before {
+  left: 0;
+  bottom: 0;
+}
+.skew.primary:hover a,
+.skew.primary:focus a {
+  color: var(--primary-clr);
+}
+
+.skew.secondary::before {
+  position: absolute;
+  content: "";
+  width: 8rem;
+  height: 4rem;
+  bottom: 20px;
+  left: -150px;
+  background-color: var(--primary-clr);
+  transition: all 0.25s ease;
+}
+
+.skew.secondary:hover::before,
+.skew.secondary:focus::before {
+  left: 0;
+  bottom: 0;
 }
 
 .grid-center {
@@ -224,21 +290,20 @@ img {
   height: 100%;
   padding-top: var(--spacer);
   position: fixed;
-  z-index: 1000;
-  top: -2000px;
-  right: -2000px;
+  z-index: 3;
+  top: -1000px;
+  right: -1000px;
   background: var(--bg-yellow);
-  background-blend-mode: color-burn;
   transition: all 0.5s ease-in-out;
 }
 
 .menu a {
-  font-size: clamp(2rem, -0.9737rem + 3.3158vw, 3rem);
+  font-size: var(--fs-2);
   display: block;
   color: var(--grey);
 }
 
-.menu li {
+.menu li {  
   padding: var(--spacer-lg);
 }
 
@@ -252,7 +317,7 @@ img {
   position: absolute;
   top: 0;
   right: 10px;
-  font-size: 2rem;
+  font-size: var(--fs-2);
   line-height: 2rem;
 }
 
@@ -321,7 +386,6 @@ h1 {
   grid-column-start: 2;
   position: relative;
   z-index: 1;
-  isolation: isolate;
   overflow: hidden;
 }
 
@@ -340,7 +404,7 @@ h1 {
 }
 
 #hero a:hover::before {
-  background-color: #14213d;
+  background-color: var(--primary-clr);
   top: -20px;
   left: -57px;
 }
@@ -352,7 +416,7 @@ h1 {
   display: grid;
 }
 
-.news-article a {
+.news-article >.link-title > a {
   text-decoration: none;
   color: var(--primary-clr);
 }
@@ -368,7 +432,6 @@ h1 {
   padding: var(--spacer) 0;
   display: grid;
   grid-template-columns: 1rem repeat(2, 1fr) 1rem;
-  grid-template-rows: auto;
   gap: 2rem 0;
 }
 
@@ -409,165 +472,6 @@ h1 {
   place-self: center;
 }
 
-/* ||  SPONSORS || */
-
-#sponsors {
-  display: grid;
-  background: var(--bg-gray);
-  background-blend-mode: color-burn;
-  place-self: center;
-  width: 100%;
-}
-
-#sponsors h2 {
-  color: var(--primary-clr);
-}
-
-#sponsors > img {
-  padding: var(--spacer);
-}
-
-/* || FAQ SECTION ||*/
-#faq {
-  padding-inline: var(--spacer);
-  background: var(--bg-blue);
-}
-#faq h2 {
-  margin-left: 4rem;
-  color: var(--grey);
-}
-
-#faq > p {
-  letter-spacing: -4px;
-  text-align: center;
-  text-shadow: var(--primary-clr) 2px 0 2px;
-  font-family: var(--ff-text);
-  color: var(--grey);
-  font-size: var(--fs-3);
-  margin-block: var(--spacer-md);
-}
-summary {
-  color: var(--primary-clr);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacer);
-}
-
-#faq > div {
-  width: 100%;
-  height: fit-content;
-  background-color: var(--grey-lighter);
-  border-radius: 2rem;
-}
-
-details {
-  margin: 1rem;
-  display: block;
-  font-family: var(--ff-text);
-  padding-block: 0.25rem;
-  overflow: hidden;
-}
-
-details > p {
-  color: var(--primary-clr);
-  display: block;
-  margin-inline: 1rem;
-  padding: 1rem;
-  border-top: 1px solid var(--primary-clr-lighter);
-}
-
-details::details-content {
-  block-size: 0;
-  transition: block-size 1s, content-visibility 1s;
-  transition-behavior: allow-discrete;
-}
-
-details[open]::details-content {
-  block-size: auto;
-}
-
-#faq i {
-  margin-left: var(--spacer);
-  transition: 0.5s;
-}
-
-details[open] i {
-  transform: rotate(270deg);
-}
-
-/*  || NEWS PAGE || */
-
-#main-newspage {
-  background: var(--bg-gray);
-}
-
-#newspage .news-article {
-  background-color: var(--grey-lighter);
-  margin-bottom: 0;
-}
-
-/* || ARTICLE PAGE || */
-
-#article-page {
-  background: var(--bg-yellow);
-}
-
-#article-page .news-article {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-}
-
-#article-page .news-article > img {
-  grid-column: 1/4;
-  grid-row: 2;
-}
-
-#article-page .news-article > .link-title {
-  padding-inline: var(--spacer);
-  grid-row: 1;
-  grid-column: 1 / 4;
-}
-
-#article-page .news-article p {
-  padding-inline: var(--spacer);
-  grid-row: auto;
-  grid-column: 1 / 4;
-}
-
-#article-page .news-article .button-row {
-  grid-row: 9;
-  width: 80%;
-  grid-column: 1 / 4;
-}
-/* || FOOTER || */
-
-footer {
-  background: var(--bg-gray);
-  padding: var(--spacer);
-  gap: var(--spacer);
-}
-
-.logo {
-  padding: var(--spacer);
-}
-
-footer > div {
-  width: 75%;
-  display: grid;
-  gap: var(--spacer);
-  grid-template-columns: repeat(5, 1fr);
-}
-
-footer > div > a {
-  grid-row: 1;
-}
-
-footer > div > a > svg {
-  grid-row: 1;
-  width: 100%;
-}
 /*  || CALENDAR SECTION || */
 #schedule {
   display: grid;
@@ -582,14 +486,10 @@ footer > div > a > svg {
 .container {
   position: relative;
   display: grid;
-  width: 100%;
   height: fit-content;
   font-family: var(--ff-brand);
 }
 
-.left {
-  width: 100%;
-}
 
 .calendar {
   position: relative;
@@ -601,7 +501,6 @@ footer > div > a > svg {
 
 .calendar .month {
   letter-spacing: 0.25rem;
-  width: 100%;
   height: 3rem;
   display: flex;
   justify-content: space-evenly;
@@ -620,7 +519,6 @@ footer > div > a > svg {
 }
 
 .calendar .weekdays {
-  width: 100%;
   height: 2rem;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -638,7 +536,6 @@ footer > div > a > svg {
 }
 
 .calendar .days {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: var(--spacer);
@@ -694,11 +591,9 @@ footer > div > a > svg {
   content: "";
   position: absolute;
   bottom: 5px;
-  left: 50%;
   width: 75%;
   height: 5px;
   border-radius: 6px;
-  transform: translateX(-50%);
   background-color: var(--secondary-clr);
 }
 
@@ -710,18 +605,15 @@ footer > div > a > svg {
 .right {
   background: var(--bg-yellow);
   display: grid;
+  position: relative;
+  color: var(--primary-clr);
+  padding-block: var(--spacer);
 }
 
 .right h2 {
   place-self: end;
 }
 
-.right {
-  position: relative;
-  width: 100%;
-  color: var(--primary-clr);
-  padding-block: var(--spacer);
-}
 
 .right .today-date {
   display: flex;
@@ -741,8 +633,6 @@ footer > div > a > svg {
 }
 
 .events {
-  width: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   font-family: var(--ff-text);
@@ -752,75 +642,190 @@ footer > div > a > svg {
 
 .events .event {
   position: relative;
-  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: var(--spacer) 0;
   text-shadow: 1px 1px var(--grey);
   font-size: 1.5rem;
 }
 
 .no-event {
-  display: grid;
   place-self: center;
   padding-block: var(--spacer);
   text-shadow: 1px 1px var(--grey);
   font-size: var(--fs-2);
 }
 
-/* || MEDIA CALENDAR || */
+/* ||  SPONSORS || */
 
-@media (min-width: 800px) {
-  #schedule {
-    padding: var(--spacer);
-  }
-
-  #schedule h2 {
-    margin-left: 3rem;
-    place-self: start;
-  }
-
-  .container {
-    grid-template-columns: 60% 40%;
-  }
-
-  .left {
-    width: 100%;
-  }
-
-  .right {
-    width: 100%;
-  }
-
-  .calendar .days .day {
-    height: 5rem;
-  }
-
-  #schedule .right h2 {
-    place-self: center;
-    font-size: var(--fs-4);
-  }
-  .event-day,
-  .event-date {
-    font-size: var(--fs-3);
-    padding-right: var(--spacer);
-  }
+#sponsors {
+  display: grid;
+  background: var(--bg-gray);
+  background-blend-mode: color-burn;
+  place-self: center;
+  width: 100%;
 }
 
-@media (min-width: 1200px) {
-  #schedule {
-    padding: var(--spacer-lg);
-  }
-  .calendar .days .day {
-    font-size: var(--fs-2);
-    height: 7rem;
-  }
-  .calendar .days .today,
-  .calendar .days .active {
-    font-size: var(--fs-4);
-  }
+#sponsors h2 {
+  color: var(--primary-clr);
+}
+
+#sponsors > img {
+  padding: var(--spacer);
+}
+
+/* || FAQ SECTION ||*/
+#faq {
+  padding: var(--spacer);
+  background: var(--bg-blue);
+}
+#faq h2 {
+  margin-left: 4rem;
+  color: var(--grey);
+}
+
+#faq > p {
+  letter-spacing: -4px;
+  text-align: center;
+  text-shadow: var(--primary-clr) 2px 0 2px;
+  font-family: var(--ff-text);
+  color: var(--grey);
+  font-size: var(--fs-3);
+  margin-block: var(--spacer-md);
+}
+summary {
+  color: var(--primary-clr);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacer);
+}
+
+#faq > div {
+  background-color: var(--grey-lighter);
+  border-radius: 2rem;
+}
+
+details {
+  margin: 1rem;
+  display: block;
+  font-family: var(--ff-text);
+  padding-block: 0.25rem;
+  overflow: hidden;
+}
+
+details > p {
+  color: var(--primary-clr);
+  display: block;
+  margin-inline: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--primary-clr-lighter);
+}
+
+details::details-content {
+  block-size: 0;
+  transition: block-size 1s, content-visibility 1s;
+  transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+#faq i {
+  margin-left: var(--spacer);
+  transition: 0.5s;
+}
+
+details[open] i {
+  transform: rotate(270deg);
+}
+
+/* || FOOTER || */
+
+footer {
+  background: var(--bg-gray);
+  padding: var(--spacer);
+  gap: var(--spacer);
+}
+
+.logo {
+  padding: var(--spacer);
+}
+
+footer > div {
+  width: 75%;
+  display: grid;
+  gap: var(--spacer);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+footer > div > a {
+  grid-row: 1;
+}
+
+footer > div > a > svg {
+  grid-row: 1;
+  width: 100%;
+}
+
+/*  ||  HOVER SOCIAL ICONS SVG  || */
+/*No need for JS if we don't set the fill attributes in html, we can manipulate it in CSS*/
+footer svg {
+  fill: var(--primary-clr);
+  transition: all 0.5s;
+}
+
+footer svg:hover {
+  fill: var(--secondary-clr);
+}
+
+/*  || NEWS PAGE || */
+
+#main-newspage {
+  background: var(--bg-gray);
+}
+
+#newspage .news-article {
+  background-color: var(--grey-lighter);
+  margin-bottom: 0;
+}
+
+/* || ARTICLE PAGE || */
+
+#article-page {
+  background: var(--bg-yellow);
+}
+
+#article-page .news-article {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+#article-page .news-article > img {
+  grid-column: 1/4;
+  grid-row: 2;
+}
+
+#article-page .news-article > .link-title {
+  padding-inline: var(--spacer);
+  grid-row: 1;
+  grid-column: 1 / 4;
+}
+
+#article-page .news-article p {
+  padding-inline: var(--spacer);
+  grid-row: auto;
+  grid-column: 1 / 4;
+}
+
+#article-page .news-article .button-row {
+  grid-row: 9;
+  width: 80%;
+  grid-column: 1 / 4;
 }
 
 /*  ||  RANKINGS  ||  */
@@ -866,19 +871,6 @@ main {
 .text-center {
   text-align: center;
 }
-
-@media (min-width: 800px) {
-  .rank-container {
-    font-size: var(--fs-2);
-    grid-template-columns: 1rem 5rem 1rem 1fr auto 1rem;
-  }
-
-  #rankings h2 {
-    margin: var(--spacer-lg);
-  }
-}
-
-/* || MEDIA HERO || */
 
 /*  ||  MENU DESKTOP  || */
 
@@ -930,6 +922,10 @@ main {
 }
 
 @media (min-width: 800px) {
+  :root {
+    --bg-gray: url(../img/rankings.webp) top/cover no-repeat;
+  }
+
   #hero article:hover::before {
     left: 150%;
     transform: skewX(-40deg);
@@ -988,17 +984,43 @@ main {
   #hero p {
     font-size: 1.5rem;
   }
-}
 
-@media (min-width: 1200px) {
-  #hero article {
-    grid-column: 1/5;
+  #schedule {
+    padding: var(--spacer);
   }
-}
 
-/* || MEDIA NEWS || */
+  #schedule h2 {
+    margin-left: 3rem;
+    place-self: start;
+  }
 
-@media (min-width: 800px) {
+  .container {
+    grid-template-columns: 60% 40%;
+  }
+
+  .calendar .days .day {
+    height: 5rem;
+  }
+
+  #schedule .right h2 {
+    place-self: center;
+    font-size: var(--fs-4);
+  }
+  .event-day,
+  .event-date {
+    font-size: var(--fs-3);
+    padding-right: var(--spacer);
+  }
+
+  .rank-container {
+    font-size: var(--fs-2);
+    grid-template-columns: 1rem 5rem 1rem 1fr auto 1rem;
+  }
+
+  #rankings h2 {
+    margin: var(--spacer-lg);
+  }
+
   #news h2 {
     grid-row: 1;
     place-self: start;
@@ -1053,11 +1075,7 @@ main {
     grid-row: 4;
     grid-column: 4 / span 2;
   }
-}
 
-/* || SPONSORS MEDIA || */
-
-@media (min-width: 800px) {
   #sponsors {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1072,11 +1090,7 @@ main {
   #sponsors img {
     grid-row: 2;
   }
-}
 
-/* || FAQ MEDIA || */
-
-@media (min-width: 800px) {
   #faq > p {
     font-size: var(--fs-4);
   }
@@ -1086,10 +1100,7 @@ main {
     margin: 0 auto;
     font-size: 1.5rem;
   }
-}
 
-/*  || FOOTER MEDIA ||  */
-@media (min-width: 800px) {
   footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -1110,10 +1121,7 @@ main {
     grid-row: 2;
     place-self: start center;
   }
-}
 
-/*  ||  NEWS PAGE  ||  */
-@media (min-width: 800px) {
   #main-newspage {
     background: var(--bg-yellow);
     padding-inline: var(--spacer-lg);
@@ -1156,10 +1164,7 @@ main {
     grid-row: 4;
     margin-bottom: var(--spacer-md);
   }
-}
 
-/*  ||  ARTICLE PAGE  ||  */
-@media (min-width: 800px) {
   #article-main {
     background: var(--bg-yellow);
   }
@@ -1198,80 +1203,20 @@ main {
   }
 }
 
-/*  ||  HOVER SOCIAL ICONS SVG  || */
-/*No need for JS if we don't set the fill attributes in html, we can manipulate it in CSS*/
-footer svg {
-  fill: var(--primary-clr);
-  transition: all 0.5s;
-}
+@media (min-width: 1200px) {
+  #schedule {
+    padding: var(--spacer-lg);
+  }
+  .calendar .days .day {
+    font-size: var(--fs-2);
+    height: 7rem;
+  }
+  .calendar .days .today,
+  .calendar .days .active {
+    font-size: var(--fs-4);
+  }
 
-footer svg:hover {
-  fill: var(--secondary-clr);
-}
-
-/*SKEWED BUTTON*/
-.skew {
-  position: relative;
-  transform: skewX(-20deg);
-  height: auto;
-  width: 8rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.skew a {
-  font-family: var(--ff-brand);
-  display: block;
-  line-height: 3rem;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #e5e5e5;
-  transform: skewX(20deg);
-}
-
-.primary {
-  border: 2px var(--primary-clr) solid;
-  background-color: var(--primary-clr);
-}
-
-.secondary {
-  background-color: var(--secondary-clr);
-}
-
-.skew.primary::before {
-  position: absolute;
-  content: "";
-  width: 8rem;
-  height: 4rem;
-  bottom: 20px;
-  left: -150px;
-  background-color: var(--secondary-clr);
-  transition: all 0.25s ease;
-}
-
-.skew.primary:hover::before,
-.skew.primary:focus::before {
-  left: 0;
-  bottom: 0;
-}
-.skew.primary:hover a,
-.skew.primary:focus a {
-  color: var(--primary-clr);
-}
-
-.skew.secondary::before {
-  position: absolute;
-  content: "";
-  width: 8rem;
-  height: 4rem;
-  bottom: 20px;
-  left: -150px;
-  background-color: var(--primary-clr);
-  transition: all 0.25s ease;
-}
-
-.skew.secondary:hover::before,
-.skew.secondary:focus::before {
-  left: 0;
-  bottom: 0;
+  #hero article {
+    grid-column: 1/5;
+  }
 }
