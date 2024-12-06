@@ -9,3 +9,6 @@ et les ajouter manuellement dans eventsArr.
 
 Et quand on clique sur un jour hors du mois en cours de display, l'affichage ne change pas
 et reste sur le jour actuel. Il faut donc changer de mois et cliquer sur le jour souhaité.
+
+https://imgur.com/a/WypNovl lighthouse PERF home
+https://imgur.com/a/uJ0e90p  lighthouse PERF pour les autres

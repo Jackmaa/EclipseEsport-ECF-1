@@ -673,6 +673,7 @@ h1 {
 }
 
 #sponsors > img {
+  max-width: 250px;
   padding: var(--spacer);
 }
 
@@ -825,7 +826,8 @@ footer svg:hover {
 #article-page .news-article .button-row {
   grid-row: 9;
   width: 80%;
-  grid-column: 1 / 4;
+  grid-column: 1 / 5;
+  padding-left: var(--spacer-lg);
 }
 
 /*  ||  RANKINGS  ||  */
@@ -1199,7 +1201,8 @@ main {
   }
 
   #article-page .news-article .button-row {
-    grid-column: 2 / 5;
+    width: 100%;
+    grid-column: 1 / 5;
   }
 }
 
