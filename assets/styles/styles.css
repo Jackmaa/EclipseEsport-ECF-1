@@ -136,6 +136,9 @@ img {
   --bg-gray: url(../img/bg-grey.webp) top/cover no-repeat;
 }
 
+
+/*                    ----------------------------- SHOULDA USED SUBGRID --------------------------------                */
+
 /* || UTILITY CLASSES || */
 .mobile-hidden {
   display: none;
